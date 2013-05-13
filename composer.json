@@ -1,0 +1,24 @@
+{
+    "name": "drak/coinrpc",
+    "description": "Client to communicate with Bitcoind style RPC servers",
+    "keywords": ["bitcoin", "litecoin", "namecoin"],
+    "homepage": "http://github.com/drak/coinrpc",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Drak",
+            "email": "drak@zikula.org"
+        }
+    ],
+    "autoload": {
+        "psr-0": {"CoinRpc\\": ""}
+    },
+    "require": {
+        "php": ">=5.3.3",
+        "guzzle/guzzle": "~3.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~3.7"
+    }
+}
