@@ -10,6 +10,7 @@ Getting started
 ### Installing via Composer
 
 The recommended way to install CoinRpc is through [Composer](http://getcomposer.org).
+Composer is the defacto new way to manage PHP dependencies and autoloading.
 
 1. Add ``drak/coinrpc`` as a dependency in your project's ``composer.json`` file:
 
@@ -19,38 +20,44 @@ The recommended way to install CoinRpc is through [Composer](http://getcomposer.
             }
         }
 
-2. Download and install Composer:
+2. Get [Composer](http://getcomposer.org) and install:
 
         curl -s http://getcomposer.org/installer | php
-
-3. Install your dependencies:
-
         php composer.phar install
 
-4. Require Composer's autoloader
-
-    Composer  prepares an autoloader file capable of autoloading all of the classes in
-    any of the libraries that it downloads.Just add the following line to your code's bootstrap process:
+3. Require Composer's autoloader
 
         require 'vendor/autoload.php';
 
-You can find out more on how to install Composer, configure autoloading, and other best-practices for defining
-dependencies at [getcomposer.org](http://getcomposer.org).
-
-
-Basic usage
------------
+Bitcoin Basic usage
+-------------------
 
 ```php
-<?php
+    <?php
+    use CoinRpc\BitcoinClient;
 
-use CoinRpc\BitcoinClient;
+    $client = new BitcoinClient('http://rpc_user:rpc_password@localhost:8332');
 
-$client = new Client('http://rpc_user:rpc_password@localhost:8332');
+    // optional SSL verification if required (off by default)
+    // $client->setSslVerification();
 
-// optional SSL verification if required (off by default)
-// $client->setSslVerification();
+    $info = $client->getInfo();
+    $balance = $client->getBalance();
+    $txid = $client->sendToAddress('1MYQ7WEyJTPaDWd6wWMYgFCXdxuc2uCvmG', (float) 0.1);
+```
 
-$info = $client->getInfo();
-$balance = $client->getBalance();
-$txid = $client->sendToAddress('138jklsdjklsjklfjklsdfklssdfs', (float) 0.1);
+Litecoin Basic usage
+--------------------
+
+As above but use the `LitecoinClient` instead.
+
+Contributions
+-------------
+
+Contribution welcome. Please open a PR or issue at https://github.com/drak/coinrpc
+
+Donations
+---------
+
+  - Bitcoin:  1MYQ7WEyJTPaDWd6wWMYgFCXdxuc2uCvmG
+  - Litecoin: LLHQxQsoXVgxnAVYqMVFWQXPY7EJrvuWC9
