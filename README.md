@@ -2,7 +2,7 @@ Coin RPC Client
 ===============
 
 Coin RPC Client is a library to allow PHP to communicate with a live
-bitcoind/litecoind etc RPC servers.
+bitcoind/litecoind/dogecoind etc RPC servers.
 
 Getting started
 ---------------
@@ -46,10 +46,10 @@ Bitcoin Basic usage
     $txid = $client->sendToAddress('1MYQ7WEyJTPaDWd6wWMYgFCXdxuc2uCvmG', (float) 0.1);
 ```
 
-Litecoin Basic usage
+Litecoin or Dogecoin Basic usage
 --------------------
 
-As above but use the `LitecoinClient` instead.
+As above but use the `LitecoinClient` or `DogecoinClient` in the place of `BitcoinClient`
 
 Contributions
 -------------
