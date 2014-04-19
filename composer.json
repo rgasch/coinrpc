@@ -1,7 +1,7 @@
 {
     "name": "drak/coinrpc",
     "description": "Client to communicate with Bitcoind style RPC servers",
-    "keywords": ["bitcoin", "litecoin", "namecoin"],
+    "keywords": ["bitcoin", "litecoin", "namecoin", "dogecoin"],
     "homepage": "http://github.com/drak/coinrpc",
     "type": "library",
     "license": "MIT",
