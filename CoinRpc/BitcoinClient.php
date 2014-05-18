@@ -787,21 +787,16 @@ class BitcoinClient extends AbstractClient
     /**
      * Submits raw transaction (serialized, hex-encoded) to local node and network.
      *
-     * @param string      $address
-     * @param float       $amount
-     * @param string|null $comment
-     * @param string|null $commentTo
+     * @param string      $hex
+     * @param boolean     $allowHighFees
      *
      * @return mixed
      */
-    public function sendRawTransaction($address, $amount, $comment = null, $commentTo = null)
+    public function sendRawTransaction($hex, $allowHighFees = null)
     {
-        $args = array($address, $amount);
-        if (null !== $comment) {
-            $args[] = $comment;
-        }
-        if (null !== $commentTo) {
-            $args[] = $commentTo;
+        $args = array($hex);
+        if (null !== $allowHighFees) {
+            $args[] = $allowHighFees;
         }
 
         return $this->dispatch('sendrawtransaction', $args);

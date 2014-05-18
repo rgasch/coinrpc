@@ -16,7 +16,7 @@ Composer is the defacto new way to manage PHP dependencies and autoloading.
 
         {
             "require": {
-                "drak/coinrpc": "1.*"
+                "drak/coinrpc": "@dev"
             }
         }
 
